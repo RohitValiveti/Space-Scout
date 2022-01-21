@@ -16,3 +16,7 @@
 
 ## Feed Page - (In Progress)
 ![simulator_screenshot_82EDC6D7-FE8F-49CC-BD66-5D7BDE7655FE](https://user-images.githubusercontent.com/63512824/150407739-63efd007-a6dd-418f-865a-001fcaabb228.png)
+
+
+## Edit Profile
+![simulator_screenshot_E01FE3E9-8A09-43D5-9558-10913604C2FE](https://user-images.githubusercontent.com/63512824/150469775-c18c5f91-5b99-470d-9d9c-4056aea9e5e0.png)
