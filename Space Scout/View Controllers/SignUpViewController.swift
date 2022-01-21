@@ -176,6 +176,7 @@ class SignUpViewController: UIViewController {
         errorLabel.textAlignment = .center
         errorLabel.textColor = .systemRed
         errorLabel.alpha = 0
+        errorLabel.numberOfLines = 3
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(errorLabel)
         
