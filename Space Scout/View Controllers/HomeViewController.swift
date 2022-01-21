@@ -1,13 +1,13 @@
 //
 //  HomeViewController.swift
-//  LoginApp
+//  Space Scout
 //
 //  Created by Rohit Valiveti on 1/18/22.
 //
 
 import UIKit
 import Firebase
-//import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 class HomeViewController: UIViewController {
     var appearance = UINavigationBarAppearance()
@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
     let userUID: String!
     var barButton = UIBarButtonItem()
     
+    var db: Firestore!
+    
     init(userUID: String){
         self.userUID = userUID
         super.init(nibName: nil, bundle: nil)
@@ -33,7 +35,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpNavBar()
-        scouts = fetchDummyData()
+        db = Firestore.firestore()
+        getScouts()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,7 +48,20 @@ class HomeViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         setUpConstraints()
-//        getScouts()
+    }
+    
+    func getScouts(){
+        db.collection("scouts").getDocuments { querySnapshot, error in
+            if let error = error{
+                print("\(error.localizedDescription)")
+            } else {
+                self.scouts = querySnapshot!.documents.flatMap({Scout(dictionary: $0.data())})
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+       
     }
     
     func setUpConstraints(){
@@ -95,42 +111,6 @@ class HomeViewController: UIViewController {
         self.present(newScoutAlert, animated: true, completion: nil)
         
     }
-    
-    func fetchDummyData() -> [Scout] {
-        let s1 = Scout(uid: "KgI9tcVinsZHL1r6UakA4hx9Si72", msg: "Rohit Test Msg")
-        let s2 = Scout(uid: "N3IM1gWwEYaf2ZccxuWsPU50vBv1", msg: "Tatum Test Message")
-        let s3 = Scout(uid: "Q55uLVhyPDQUT6mpzFGXvIkQLdv2", msg: "Brown Test Message")
-
-        return [s1, s2, s3]
-    }
-    
-//    func getScouts(){
-//        let db = Firestore.firestore()
-//        db.collection("scouts").addSnapshotListener { snapshot, error in
-//            guard let documents = snapshot?.documents else {
-//                print("No documents")
-//                return
-//            }
-//            
-//            self.scouts = documents.compactMap({ queryDocumentSnapshot in
-//                self.scouts += try! [(queryDocumentSnapshot.data(as: Scout.self) ?? nil)!]
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//                return try? queryDocumentSnapshot.data(as: Scout.self)
-//            })
-//            
-//            
-////            self.scouts = documents.compactMap({ (queryDocumentSnapshot) -> Scout? in
-////                return try? queryDocumentSnapshot.data(as: Scout.self)
-////            })
-//            
-//        }
-//    }
-    
-
-
-
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -141,13 +121,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseCellID, for: indexPath) as! FeedTableViewCell
+        
         cell.configure(scouts[indexPath.row])
         return cell
         
     }
     
     /// Delegate Methods
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(80)
     }
@@ -156,3 +136,4 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     //
     //    }
 }
+
