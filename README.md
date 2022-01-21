@@ -14,9 +14,12 @@
 ![simulator_screenshot_F127E24E-6AD7-4482-8C6A-064ECDB60023](https://user-images.githubusercontent.com/63512824/150407582-62fa27f3-a4ec-408d-ad67-6b43b4199e4a.png)
 
 
-## Feed Page - (In Progress)
-![simulator_screenshot_82EDC6D7-FE8F-49CC-BD66-5D7BDE7655FE](https://user-images.githubusercontent.com/63512824/150407739-63efd007-a6dd-418f-865a-001fcaabb228.png)
+## Feed Page - (Post new messages (scouts) and update feed in real-time)
+![simulator_screenshot_3C3CC7FC-96CB-4F0D-A0DD-8B6E5736A524](https://user-images.githubusercontent.com/63512824/150592254-fd49420a-3bc9-4cc0-a00d-45bcd292d13f.png)
 
+![simulator_screenshot_9FCC8DC2-1DF3-43AC-93BD-D706742CD604](https://user-images.githubusercontent.com/63512824/150592284-73b9f73c-0604-40c7-ba36-8511bb4b72f1.png)
+
+![simulator_screenshot_B0A98619-53E5-4F84-B447-B4DE42C49EC9](https://user-images.githubusercontent.com/63512824/150592308-52d0208d-871b-47e0-870e-8331d1d95ee1.png)
 
 ## Edit Profile
 ![simulator_screenshot_E01FE3E9-8A09-43D5-9558-10913604C2FE](https://user-images.githubusercontent.com/63512824/150469775-c18c5f91-5b99-470d-9d9c-4056aea9e5e0.png)
