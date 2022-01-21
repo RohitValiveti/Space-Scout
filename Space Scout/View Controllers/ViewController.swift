@@ -79,28 +79,24 @@ class ViewController: UIViewController {
         let loginVC = LoginViewController()
         navigationController?.pushViewController(loginVC, animated: true)
     }
-    
-    
+      
     func styleElements(){
         /// Sign Up Button
         signUpButton.setTitleColor(.systemMint, for: .normal)
         signUpButton.setTitle("Sign Up", for: .normal)
         
         signUpButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-//        signUpButton.backgroundColor = UIColor.systemMint.withAlphaComponent(0.8)
         signUpButton.layer.borderWidth = 1
         signUpButton.layer.borderColor = UIColor.systemMint.cgColor
         signUpButton.layer.cornerRadius = 40
         
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(signUpButton)
-        
-        
+                
         /// Login Button
         loginButton.setTitleColor(.systemMint, for: .normal)
         loginButton.setTitle("Login", for: .normal)
         loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-//        loginButton.backgroundColor = UIColor.systemMint.withAlphaComponent(0.8)
         loginButton.layer.borderWidth = 1
         loginButton.layer.borderColor = UIColor.systemMint.cgColor
         loginButton.layer.cornerRadius = 40
@@ -114,12 +110,9 @@ class ViewController: UIViewController {
         mainLabel.font = UIFont(name: "Chalkduster", size: 60)
         mainLabel.numberOfLines = 2
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(mainLabel)
-        
+        view.addSubview(mainLabel)      
     }
-    
-    
-    
+     
     func setUpConstraints(){
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
@@ -139,4 +132,3 @@ class ViewController: UIViewController {
         ])
     }
 }
-
