@@ -1,12 +1,15 @@
 # Space-Scout
 "Twitter-like" social media app themed around Astronomy
 
+## Video Demonstration
+https://user-images.githubusercontent.com/63512824/150596835-f4fc1cac-0ecb-4612-abb5-329ed489fca1.mp4
 
-## Home Screen (Video Background)
+
+## Home Screen
 ![simulator_screenshot_4DB6D128-1A9A-4691-8368-1DB36C2EA421](https://user-images.githubusercontent.com/63512824/150407456-69906d33-889e-4bc1-86b9-43a92e5f3c6a.png)
 
 
-## Register Page - (Email and Password Validation)
+## Sign up Page - (Email and Password Validation)
 ![simulator_screenshot_13ADFD8D-9C96-440C-864D-EA4A9FF94BB1](https://user-images.githubusercontent.com/63512824/150407529-bc03dcc0-7d26-4f97-8743-eb2f03be26a3.png)
 
 
